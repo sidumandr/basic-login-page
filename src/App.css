@@ -1,38 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #2148c0;
+  background-image: url("./assets/BG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  gap: 80px;
+  width: 300px;
+  height: 398px;
 }
 
-.App-link {
-  color: #61dafb;
+/* shopping box start */
+
+form .shopping-box {
+  position: relative;
+  width: 119.39px;
+  height: 97.85px;
+  animation: float 3s ease-in-out infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.wind-effect {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  overflow: hidden; /* Çizgilerin kutunun dışına çıkmasını engeller */
+}
+
+.wind-line {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 70px; /* Yüksekliği artırdık */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ); /* Daha yoğun görünmesi için renk opaklığını artırdık */
+  animation: moveUp 2.5s ease-in-out infinite; /* Hızlandırdık */
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-30px); /* Yukarı çıkış miktarını artırdık */
   }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0.8; /* Başlangıç opaklığı */
+  }
+  50% {
+    opacity: 0.3; /* Orta noktada opaklık düşer */
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0; /* Yukarıda tamamen kaybolma */
+  }
+}
+
+/* Daha fazla çizgi ekleyerek rüzgarın yoğunluğunu artırıyoruz */
+.wind-line:nth-child(1) {
+  left: 10px;
+  animation-delay: 0s;
+}
+
+.wind-line:nth-child(2) {
+  left: 20px;
+  animation-delay: 0.2s;
+}
+
+.wind-line:nth-child(3) {
+  left: 30px;
+  animation-delay: 0.4s;
+}
+
+.wind-line:nth-child(4) {
+  left: 40px;
+  animation-delay: 0.6s;
+}
+
+.wind-line:nth-child(5) {
+  left: 50px;
+  animation-delay: 0.8s;
+}
+
+.wind-line:nth-child(6) {
+  left: 60px;
+  animation-delay: 1s;
+}
+
+.wind-line:nth-child(7) {
+  left: 70px;
+  animation-delay: 1.2s;
+}
+
+.wind-line:nth-child(8) {
+  left: 80px;
+  animation-delay: 1.4s;
+}
+
+/* shopping box end */
+
+form .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.text-input {
+  background: transparent;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #ffffffb9;
+  width: 300px;
+  height: 45px;
+  padding-left: 40px;
+  padding-right: 10px;
+}
+
+.text-input::placeholder {
+  color: #ffffff8d;
+  opacity: 1;
+}
+
+.text-input:focus {
+  outline: none;
+}
+
+.text-input:hover {
+  border-radius: 40px;
+  transition: 0.5s;
+  font-weight: 600;
+  border: 1px solid #ffffff4f;
+}
+
+.controls button {
+  width: auto;
+  height: 45px;
+  border-radius: 4px;
+  border: none;
+  color: #2148c0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  color: #ffffff;
+  background-color: #2149c040;
+  border-radius: 20px;
+  transition: 0.5s;
+  font-weight: 600;
+  border: 1px solid #ffffff;
 }
