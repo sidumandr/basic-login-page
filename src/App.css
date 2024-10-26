@@ -45,21 +45,16 @@ form .shopping-box {
   transform: translateX(-50%);
   width: 100px;
   height: 50px;
-  overflow: hidden; /* Çizgilerin kutunun dışına çıkmasını engeller */
+  overflow: hidden;
 }
 
 .wind-line {
   position: absolute;
   bottom: 0;
   width: 2px;
-  height: 70px; /* Yüksekliği artırdık */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.6
-  ); /* Daha yoğun görünmesi için renk opaklığını artırdık */
-  animation: moveUp 2.5s ease-in-out infinite; /* Hızlandırdık */
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.6);
+  animation: moveUp 2.5s ease-in-out infinite;
   opacity: 0.7;
 }
 
@@ -69,25 +64,24 @@ form .shopping-box {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-30px); /* Yukarı çıkış miktarını artırdık */
+    transform: translateY(-30px);
   }
 }
 
 @keyframes moveUp {
   0% {
     transform: translateY(100%);
-    opacity: 0.8; /* Başlangıç opaklığı */
+    opacity: 0.8;
   }
   50% {
-    opacity: 0.3; /* Orta noktada opaklık düşer */
+    opacity: 0.3;
   }
   100% {
     transform: translateY(-100%);
-    opacity: 0; /* Yukarıda tamamen kaybolma */
+    opacity: 0;
   }
 }
 
-/* Daha fazla çizgi ekleyerek rüzgarın yoğunluğunu artırıyoruz */
 .wind-line:nth-child(1) {
   left: 10px;
   animation-delay: 0s;
